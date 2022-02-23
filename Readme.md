@@ -49,10 +49,10 @@ configuration must be like :
 }
 ```
 with the following value : 
-timeout : maximum wait time before trying to perform action on element (error is returned if element never appears)
-isGrid : if true, selenium grid is used to execute test, if false, test is executed locally
-browser: CHROME or FIREFOX
-screenshot : NONE no screenshot taken, FAIL : screenshot taken only when a fail occurs, ALL : screenshot taken at all assertions
+- timeout : maximum wait time before trying to perform action on element (error is returned if element never appears)
+- isGrid : if true, selenium grid is used to execute test, if false, test is executed locally
+- browser: CHROME or FIREFOX
+- screenshot : NONE no screenshot taken, FAIL : screenshot taken only when a fail occurs, ALL : screenshot taken at all assertions
 
 
 
