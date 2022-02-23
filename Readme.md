@@ -38,8 +38,23 @@ To write the test, you need to use Junit 5 already configured in pom.xml
 Testcase can be launched as a JUnit test (tested only in Eclipse).
 Test can be launched with ```mvn test -Dconfig=path/to/config/config.json```. A default config file is present in com.aodocs.test.core.config.config-example.json
 
-## Issues
-- steps are not displayed in the report
+configuration must be like :
+```
+{
+"timeout":10,
+"isGrid":false,
+"gridServer":"http://localhost:4444/wd/hub",
+"browser":"CHROME",
+"screenshot":"NONE"
+}
+```
+with the following value : 
+timeout : maximum wait time before trying to perform action on element (error is returned if element never appears)
+isGrid : if true, selenium grid is used to execute test, if false, test is executed locally
+browser: CHROME or FIREFOX
+screenshot : NONE no screenshot taken, FAIL : screenshot taken only when a fail occurs, ALL : screenshot taken at all assertions
+
+
 
 ## TODO
 - improve logs (present only in assertion class and in UIActions class)
@@ -48,5 +63,11 @@ Test can be launched with ```mvn test -Dconfig=path/to/config/config.json```. A 
 - query real TMS to get a real description of test
 - add tag to launch all tests by tag if needed
 - configure CI/CD to execute tests
+
+## Reporting
+Allure files are generated in /target/allure-results.
+To generate the report, go to /target and execute : 
+```path\to\allure\bin\allure generate -c
+path\to\allure\bin\allure serve```
 
 

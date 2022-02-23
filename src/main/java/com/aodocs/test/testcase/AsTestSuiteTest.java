@@ -3,6 +3,7 @@
  */
 package com.aodocs.test.testcase;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import org.junit.jupiter.api.DisplayName;
@@ -100,8 +101,8 @@ public class AsTestSuiteTest extends TestSuiteAbstract {
 		Field message = new Field(Fieldnames.MESSAGE, FieldType.TEXTAREA);
 		message.setErrorMsg(Fieldnames.ERROR_TEXT_FIELD_MANDATORY);
 
-//		new FieldChecker().checkSeveralFieldsErrorMsg(Arrays.asList(firstname, lastname, email, employees, country,
-//				hear, phone, companyName, requestType, message));
+		new FieldChecker().checkSeveralFieldsErrorMsg(Arrays.asList(firstname, lastname, email, employees, country,
+				hear, phone, companyName, requestType, message));
 	}
 
 	private EmployeeSize getRandomEmployeeSize() {
