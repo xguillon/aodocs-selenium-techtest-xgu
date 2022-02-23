@@ -1,3 +1,8 @@
 target
 .allure
 .idea
+/.classpath
+/.project
+/allure-report/
+/allure-results/
+selenium.log

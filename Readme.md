@@ -25,3 +25,28 @@ The test steps are:
 ## Notes
 In this project you can find a utility class "WebDriverUtility" to help you to start a browser locally.
 To write the test, you need to use Junit 5 already configured in pom.xml
+
+## Project architecture
+- in com.aodocs.test.core package : all classes needed to interact with page, launch browser, assertions with screenshot, etc...
+- in com.aodocs.test.bindings : all queries used
+- in com.aodocs.test.behavior : all actions possible in pages. There is no page object model, but several actions which can be used together
+- in com.aodocs.test.checkers : each checker is an action + the corresponding assertion. TestCases will mostly use checkers
+- in com.aodocs.test.checkers : some beans to modelise data
+- in com.aodocs.test.testcase : all testcases
+
+## Execution
+Testcase can be launched as a JUnit test (tested only in Eclipse).
+Test can be launched with ```mvn test -Dconfig=path/to/config/config.json```. A default config file is present in com.aodocs.test.core.config.config-example.json
+
+## Issues
+- steps are not displayed in the report
+
+## TODO
+- improve logs (present only in assertion class and in UIActions class)
+- Improve Steps description and testcase description.
+- configure correct issue and tms links
+- query real TMS to get a real description of test
+- add tag to launch all tests by tag if needed
+- configure CI/CD to execute tests
+
+
